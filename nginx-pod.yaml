@@ -1,13 +1,13 @@
+# Correct YAML for a Pod
 apiVersion: v1
 kind: Pod
-metadata: 
+metadata:
   name: nginx-pod
-  labels: 
-    apps: nginx
-  spec:
-    containers:
-    - name: nginx-container
-      image: nginx:latest
-      ports:
-      - ContainerPort: 80
-      
+  labels:  # Optional: You can add labels here if needed
+    app: nginx
+spec: # 'spec' is a top-level field for the Pod
+  containers:
+  - name: nginx-container
+    image: nginx:latest
+    ports:
+    - containerPort: 80
